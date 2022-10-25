@@ -35,6 +35,7 @@ struct HomeTabView_Previews: PreviewProvider {
     static var previews: some View {
         HomeTabView()
             .environmentObject(TimerModel())
+            .environmentObject(AuthViewModel())
     }
 }
 
