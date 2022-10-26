@@ -11,11 +11,14 @@ import Firebase
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var didAuthenticateUser = false
+    @Published var currentUser: User?
+    
+    private let service = UserService()
     
     init () {
         self.userSession = Auth.auth().currentUser
-        
-        print("DEBUG: User sesion is \(self.userSession?.uid)")
+        self.fetchUser()
+        //print("DEBUG: User sesion is \(self.userSession?.uid)")
     }
 
     
@@ -63,5 +66,13 @@ class AuthViewModel: ObservableObject {
         
         //Sign out user on the backend/server
         try? Auth.auth().signOut()
+    }
+    
+    func fetchUser() {
+        guard let uid = self.userSession?.uid else { return }
+        
+        service.fetchUser(withUid: uid) { user in
+            self.currentUser = user
+        }
     }
 }

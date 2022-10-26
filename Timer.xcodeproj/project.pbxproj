@@ -11,6 +11,8 @@
 		7F4C31A028F1B6A30017F636 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C319F28F1B6A30017F636 /* TimerModel.swift */; };
 		7F4C31A228F1B7270017F636 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C31A128F1B7270017F636 /* MainView.swift */; };
 		7F4C31A428F2BEE50017F636 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4C31A328F2BEE50017F636 /* AnalyticsView.swift */; };
+		7F9C7EAB2909BE5200F98C04 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C7EAA2909BE5200F98C04 /* UserService.swift */; };
+		7F9C7EAE2909C07C00F98C04 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9C7EAD2909C07C00F98C04 /* User.swift */; };
 		7FC3EBA728FF31B800968C31 /* TempAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3EBA628FF31B800968C31 /* TempAuthView.swift */; };
 		7FC3EBA928FF376C00968C31 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3EBA828FF376C00968C31 /* AuthViewModel.swift */; };
 		7FC3EBAB28FF439D00968C31 /* TempLoggedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3EBAA28FF439D00968C31 /* TempLoggedView.swift */; };
@@ -36,6 +38,8 @@
 		7F4C319F28F1B6A30017F636 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		7F4C31A128F1B7270017F636 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		7F4C31A328F2BEE50017F636 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
+		7F9C7EAA2909BE5200F98C04 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		7F9C7EAD2909C07C00F98C04 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FC3EBA628FF31B800968C31 /* TempAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempAuthView.swift; sourceTree = "<group>"; };
 		7FC3EBA828FF376C00968C31 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		7FC3EBAA28FF439D00968C31 /* TempLoggedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempLoggedView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,22 @@
 			path = Playground;
 			sourceTree = "<group>";
 		};
+		7F9C7EA92909BE3D00F98C04 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7F9C7EAA2909BE5200F98C04 /* UserService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7F9C7EAC2909C07500F98C04 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F9C7EAD2909C07C00F98C04 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7FEAE3CF28F5F93D00F5D043 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				7FECBD3528CFBF07005F682E /* TimerApp.swift */,
+				7F9C7EAC2909C07500F98C04 /* Model */,
+				7F9C7EA92909BE3D00F98C04 /* Service */,
 				7F4C319E28F1B67F0017F636 /* ViewModels */,
 				7F4C319D28F1B6740017F636 /* Views */,
 				7FEAE3CF28F5F93D00F5D043 /* Components */,
@@ -236,11 +258,13 @@
 				7F4C31A028F1B6A30017F636 /* TimerModel.swift in Sources */,
 				7FEAE3D128F5F94C00F5D043 /* RoundedShape.swift in Sources */,
 				7FC3EBAB28FF439D00968C31 /* TempLoggedView.swift in Sources */,
+				7F9C7EAE2909C07C00F98C04 /* User.swift in Sources */,
 				7FE26BF728DB8C8000C283C6 /* TimerExperiment.swift in Sources */,
 				7F4C31A428F2BEE50017F636 /* AnalyticsView.swift in Sources */,
 				7F3E495A28F2C1D0002FCDDF /* HomeTabView.swift in Sources */,
 				7FEAE3D328F6089500F5D043 /* AuthView.swift in Sources */,
 				7FC3EBA928FF376C00968C31 /* AuthViewModel.swift in Sources */,
+				7F9C7EAB2909BE5200F98C04 /* UserService.swift in Sources */,
 				7F4C31A228F1B7270017F636 /* MainView.swift in Sources */,
 				7FECBD3628CFBF07005F682E /* TimerApp.swift in Sources */,
 				7FEAE3CE28F5F6DD00F5D043 /* RegistrationView.swift in Sources */,

@@ -14,41 +14,48 @@ struct TempLoggedView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
-        ZStack {
-            AngularGradient(
-                gradient: Gradient(colors: [Color(colorOne), Color(colorTwo)]),
-                //center: .topLeading,
-                center: .topTrailing,
-                angle: .degrees(180 + 45))
-            .ignoresSafeArea()
-            VStack {
-                Spacer()
-                
-                Text("You're logged in 🎉")
-                    .foregroundColor(.white)
-                    .font(.system(size: 45, weight: .ultraLight, design: .rounded))
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.1)
-                
-                NavigationLink{
-                    HomeTabView().onAppear{
-                        //viewModel.userSession =
-                    }
-                        .navigationBarHidden(true)
-                } label: {
-                    HStack {
-                        Text("Back home")
-                            .foregroundColor(.gray)
-                    }
-                } .padding()
-                
-                Spacer()
-                Button{
-                    viewModel.signOut()
-                } label: {
-                    Text("Sign out")
-                } .padding() .foregroundColor(.gray)
-                
+        if let user = viewModel.currentUser {
+            ZStack {
+                AngularGradient(
+                    gradient: Gradient(colors: [Color(colorOne), Color(colorTwo)]),
+                    //center: .topLeading,
+                    center: .topTrailing,
+                    angle: .degrees(180 + 45))
+                .ignoresSafeArea()
+                VStack {
+                    Spacer()
+                    
+                    Text("""
+                    Hey \(user.name),
+                    now you're logged in 🎉
+                    """)
+                        .foregroundColor(.white)
+                        .font(.system(size: 45, weight: .ultraLight, design: .rounded))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.1)
+                        .padding()
+                    
+                    NavigationLink{
+                        HomeTabView().onAppear{
+                            //viewModel.userSession =
+                        }
+                            .navigationBarHidden(true)
+                    } label: {
+                        HStack {
+                            Text("Back home")
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }
+                    } .padding()
+                    
+                    Spacer()
+                    Button{
+                        viewModel.signOut()
+                    } label: {
+                        Text("Sign out")
+                    } .padding() .foregroundColor(.gray)
+                    
+                }
             }
         }
     }
