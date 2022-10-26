@@ -20,6 +20,8 @@ struct TempAuthView: View {
                 center: .topTrailing,
                 angle: .degrees(180 + 45))
             .ignoresSafeArea()
+            
+            //Log in and sign up nav links
             VStack {
                 
                 //LogIn

@@ -16,12 +16,14 @@ struct TempLoggedView: View {
     var body: some View {
         if let user = viewModel.currentUser {
             ZStack {
+                
                 AngularGradient(
                     gradient: Gradient(colors: [Color(colorOne), Color(colorTwo)]),
                     //center: .topLeading,
                     center: .topTrailing,
                     angle: .degrees(180 + 45))
                 .ignoresSafeArea()
+                
                 VStack {
                     Spacer()
                     
@@ -35,6 +37,7 @@ struct TempLoggedView: View {
                         .minimumScaleFactor(0.1)
                         .padding()
                     
+                    //Back home button
                     NavigationLink{
                         HomeTabView().onAppear{
                             //viewModel.userSession =
@@ -49,6 +52,8 @@ struct TempLoggedView: View {
                     } .padding()
                     
                     Spacer()
+                    
+                    //Sign out button
                     Button{
                         viewModel.signOut()
                     } label: {
@@ -64,5 +69,6 @@ struct TempLoggedView: View {
 struct TempLoggedView_Previews: PreviewProvider {
     static var previews: some View {
         TempLoggedView()
+            .environmentObject(AuthViewModel())
     }
 }

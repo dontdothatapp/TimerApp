@@ -24,7 +24,7 @@ struct AnalyticsView: View {
             VStack {
                 Text("Your analytics")
                     .foregroundColor(.white)
-                .font(.system(size: 65, weight: .ultraLight, design: .rounded))
+                    .font(.system(size: 65, weight: .ultraLight, design: .rounded))
                 
             }
         }

@@ -22,6 +22,7 @@ struct RegistrationView: View {
         ZStack {
             VStack{
                 
+                //Hidden link: If registration successful -> navigate to the TempLoggedView
                 NavigationLink(destination: TempLoggedView().navigationBarBackButtonHidden(),
                                isActive: $viewModel.didAuthenticateUser,
                                label: { })
@@ -84,10 +85,6 @@ struct RegistrationView: View {
             }
             .ignoresSafeArea(edges: .top)
             .navigationBarHidden(true)
-            
-//            Text("Sign up")
-//                .foregroundColor(.white)
-//                .font(.system(size: 65, weight: .ultraLight, design: .rounded))
         }
     }
 }

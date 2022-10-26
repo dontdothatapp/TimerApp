@@ -31,7 +31,8 @@ class AuthViewModel: ObservableObject {
             
             guard let user = result?.user else { return }
             self.userSession = user
-            print("DEBUG: Did log user in")
+            self.didAuthenticateUser = true
+            print("DEBUG: Screen should be dismissed")
         }
         
     }
@@ -68,6 +69,8 @@ class AuthViewModel: ObservableObject {
         try? Auth.auth().signOut()
     }
     
+    
+    //service func where i'm using UserService and put data from it to the AuthViewModel
     func fetchUser() {
         guard let uid = self.userSession?.uid else { return }
         

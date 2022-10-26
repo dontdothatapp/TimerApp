@@ -8,6 +8,7 @@
 import Firebase
 import FirebaseFirestoreSwift
 
+//service to get the user data from Firestore
 struct UserService {
     func fetchUser(withUid uid: String, completion: @escaping(User) -> Void) {
         print("DEBUG: Fetch user info")

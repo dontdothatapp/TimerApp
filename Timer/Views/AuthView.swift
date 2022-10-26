@@ -17,6 +17,13 @@ struct AuthView: View {
     
     var body: some View {
         VStack{
+            
+            //Hidden link: If registration successful -> navigate to the TempLoggedView
+            //NEED TO BE FIXED: This NavigationLink is not working: 
+            NavigationLink(destination: TempLoggedView().navigationBarBackButtonHidden(),
+                           isActive: $viewModel.didAuthenticateUser,
+                           label: { })
+            
             AuthHeaderView(title: "sign in...")
             
             //Fields
@@ -77,5 +84,6 @@ struct AuthView: View {
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
         AuthView()
+            .environmentObject(AuthViewModel())
     }
 }

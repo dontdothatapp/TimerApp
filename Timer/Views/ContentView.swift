@@ -44,17 +44,16 @@ struct ContentView: View {
                 Text(dateFormatter.string(from: currentDate))
                     .foregroundColor(.white)
                     .opacity(0.3)
-                    //.offset(x: 130)
                 
                 //Timer
                 HStack{
                     Text(timerModel.showCounter())
-                    //Text(timerModel.convertWithZero(timerModel.hours) + ":" + timerModel.convertWithZero(timerModel.minutes) + ":" + timerModel.convertWithZero(timerModel.seconds))
+                        .foregroundColor(.white)
+                        .font(.system(size: 75, weight: .ultraLight, design: .rounded))
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.1)
                 }
-                .foregroundColor(.white)
-                .font(.system(size: 75, weight: .ultraLight, design: .rounded))
-                .lineLimit(1)
-                .minimumScaleFactor(0.1)
+                
                 
                 
                 Button {
@@ -72,7 +71,6 @@ struct ContentView: View {
                         Text("Start the journey")
                     }
                 }
-                //.padding(.top, 1)
                 .foregroundColor(.white)
                 .opacity(0.7)
                 .offset(y: 30)
@@ -82,13 +80,12 @@ struct ContentView: View {
                 //Total time spent
                 HStack{
                     Text(timerModel.showTotalTime())
-                    //Text("Total time spent: " + timerModel.convertWithZero(timerModel.totalHours) + ":" + timerModel.convertWithZero(timerModel.totalMinutes) + ":" + timerModel.convertWithZero(timerModel.totalSeconds))
+                        .foregroundColor(.white)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.1)
+                        .opacity(0.3)
+                        .padding(.bottom, 60)
                 }
-                .foregroundColor(.white)
-                .lineLimit(1)
-                .minimumScaleFactor(0.1)
-                .opacity(0.3)
-                .padding(.bottom, 60)
             }
 //            .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
 //                if timerModel.isStarted{

@@ -26,7 +26,7 @@ struct HomeTabView: View {
             notLoggedInView
         } else {
             //have logged in user
-            loggedInInterface
+            loggedInView
         }
     }
 }
@@ -40,7 +40,7 @@ struct HomeTabView_Previews: PreviewProvider {
 }
 
 extension HomeTabView {
-    var loggedInInterface: some View {
+    var loggedInView: some View {
         TabView{
             ContentView()
                 .tabItem {
