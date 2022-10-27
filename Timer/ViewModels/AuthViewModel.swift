@@ -32,6 +32,7 @@ class AuthViewModel: ObservableObject {
             guard let user = result?.user else { return }
             self.userSession = user
             self.didAuthenticateUser = true
+            self.fetchUser()
             print("DEBUG: Screen should be dismissed")
         }
         
