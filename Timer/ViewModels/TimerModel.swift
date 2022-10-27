@@ -17,6 +17,7 @@ class TimerModel: NSObject, ObservableObject {
     @Published var totalSeconds: Int = 0
     @Published var currentSeconds: Int = 0
     @Published var totalTime: Int = 0
+    let service = TimeLogService()
     
     //Updating total time + reset current timer
     func startTimer() {
