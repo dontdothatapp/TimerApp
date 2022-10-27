@@ -8,16 +8,20 @@
 import Firebase
 
 struct TimeLogService {
+    
+    //👇That's doesn't work 👇
+    //let timerModel = TimerModel()
+    
     func uploadTime(timeInSec: Int) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         
         let data = ["uid": uid,
-                    "timeInSec": Int(),
+                    "timeInSec": timeInSec,
                     "Timestamp": Timestamp(date: Date())] as [String : Any]
         
         Firestore.firestore().collection("timeSpent").document()
             .setData(data) { _ in
-                print("DEBUG: Time uploaded")
+                print("DEBUG: data: \(data)")
             }
     }
 }

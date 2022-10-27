@@ -19,11 +19,17 @@ class TimerModel: NSObject, ObservableObject {
     @Published var totalTime: Int = 0
     let service = TimeLogService()
     
+    
+    func uploadCurrentTime(_ timeInSec: Int) {
+        service.uploadTime(timeInSec: timeInSec)
+    }
+    
     //Updating total time + reset current timer
     func startTimer() {
         totalTime = totalTime + currentSeconds
         totalTimeCount(totalTime)
-        currentSeconds = 0
+        uploadCurrentTime(currentSeconds)
+        //currentSeconds = 0
     }
     
     func stopTimer(){
@@ -47,7 +53,7 @@ class TimerModel: NSObject, ObservableObject {
     func updateTimer(){
         currentSeconds += 1
         printSecondsToHoursMinutesSeconds(currentSeconds)
-        print("CurrentSec: \(currentSeconds), \(hours):\(minutes):\(seconds); Total time: \(totalTime)")
+        //print("CurrentSec: \(currentSeconds), \(hours):\(minutes):\(seconds); Total time: \(totalTime)")
     }
     
     //Add 0 if the value (hours/minutes/seconds) less then 10

@@ -26,6 +26,7 @@ struct ContentView: View {
     }
     
     @EnvironmentObject var timerModel: TimerModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -58,6 +59,7 @@ struct ContentView: View {
                 
                 Button {
                     if timerModel.isStarted{
+                        //timerModel.uploadCurrentTime(withTime: timerModel.currentSeconds)
                         timerModel.isStarted.toggle()
                         timerModel.startTimer()
                     } else {

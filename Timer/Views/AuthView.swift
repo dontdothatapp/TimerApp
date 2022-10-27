@@ -13,7 +13,7 @@ struct AuthView: View {
     @State private var email = ""
     @State private var password = ""
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         VStack{
@@ -21,7 +21,7 @@ struct AuthView: View {
             //Hidden link: If registration successful -> navigate to the TempLoggedView
             //NEED TO BE FIXED: This NavigationLink is not working: 
             NavigationLink(destination: TempLoggedView().navigationBarBackButtonHidden(),
-                           isActive: $viewModel.didAuthenticateUser,
+                           isActive: $authViewModel.didAuthenticateUser,
                            label: { })
             
             AuthHeaderView(title: "sign in...")
@@ -39,7 +39,7 @@ struct AuthView: View {
             
             //Sign in button
             Button{
-                viewModel.login(withEmail: email, password: password)
+                authViewModel.login(withEmail: email, password: password)
             } label: {
                 Text("Sign in")
                     .font(.headline)

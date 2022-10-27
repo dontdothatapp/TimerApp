@@ -15,7 +15,7 @@ struct RegistrationView: View {
     @State private var email = ""
     @State private var password = ""
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     
     var body: some View {
@@ -24,7 +24,7 @@ struct RegistrationView: View {
                 
                 //Hidden link: If registration successful -> navigate to the TempLoggedView
                 NavigationLink(destination: TempLoggedView().navigationBarBackButtonHidden(),
-                               isActive: $viewModel.didAuthenticateUser,
+                               isActive: $authViewModel.didAuthenticateUser,
                                label: { })
                 
                 AuthHeaderView(title: "sign up...")
@@ -46,7 +46,7 @@ struct RegistrationView: View {
                 
                 //Sign up button
                 Button{
-                    viewModel.register(withEmail: email, password: password, name: name)
+                    authViewModel.register(withEmail: email, password: password, name: name)
                 } label: {
                     Text("Sign up")
                         .font(.headline)
